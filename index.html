@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="img/logo_1.png" />
+        <meta name="description" content="This website was created for assignment 'Belajar Dasar Pemrograman Web'"/>
+        <title>THIS IS BOOKSHELF!!!</title>
+    </head>
+    <body id="body">
+        <header>
+            <h1><a href="/">THIS IS BOOKSHELF!!!</a></h1>
+            <nav>
+                <ul id="ul1">
+                    <li><button class="buttonModeDark"><img src="img/modeDark.svg"/></button></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="empty">
+                <h2></h2>
+                <div id="dialogTambahBuku" class="dialog" align="center">
+                    <p align="center">SELAMAT! BUKU BERHASIL DITAMBAH</p>
+                    <input id="tombolDialogTambah" class="tombol tombolDialog" type="submit" value="OK"></input>
+                </div>
+                <div id="dialogSelesaiBuku" class="dialog" align="center">
+                    <p align="center">SELAMAT! BUKU BERHASIL DISELESAIKAN</p>
+                    <input id="tombolDialogSelesai" class="tombol tombolDialog" type="submit" value="OK"></input>
+                </div>
+                <div id="dialogBatalBuku" class="dialog" align="center">
+                    <p align="center">SELAMAT BUKU BERHASIL DIBATALKAN SELESAI</p>
+                    <input id="tombolDialogBatal" class="tombol tombolDialog" type="submit" value="OK"></input>
+                </div>
+                <div id="dialogHapusBuku" class="dialog" align="center">
+                    <p align="center">SELAMAT BUKU BERHASIL DIHAPUS</p>
+                    <input id="tombolDialogHapus" class="tombol tombolDialog" type="submit" value="OK"></input>
+                </div>
+                <div id="dialogInputanKosong" class="dialog" align="center">
+                    <p align="center">INPUTAN TIDAK BOLEH KOSONG ATAU TAHUN HARUS DIBAWAH TAHUN INI</p>
+                    <input id="tombolDialogInputanKosong" class="tombol tombolDialog" type="submit" value="OK"></input>
+                </div>
+                <div id="dialogUpdateBuku" class="dialog" align="center" style="display: none;">
+                    <p align="center">SELAMAT! BUKU BERHASIL DIPERBARUI</p>
+                    <input id="tombolDialogUpdate" class="tombol tombolDialog" type="submit" value="OK"></input>
+                </div>
+                <h2></h2>
+            </div>
+            <div class="container1">
+                <form style="display: flex; flex-direction: column; gap: 15px" data-testid="searchBookForm">
+                    <h3 align="center">MENCARI BUKU</h3>
+                    <input data-testid="searchBookFormTitleInput" id="inputMencari" class="input" type="text" placeholder="Cari Buku. Contoh -Dark Hunter- ">
+                    <button data-testid="searchBookFormSubmitButton" id="tombolCariBuku" class="tombolCari" type="submit">CARI</button></br>
+                </form>
+                <form id="form" data-testid="bookForm">
+                    <h3 align="center">MEMBUAT BUKU</h3>
+                    <h4 class="titleInput">Judul</h4>
+                    <input data-testid="bookFormTitleInput" id="inputJudul" class="input" type="text" placeholder="Judul Buku. Contoh -Dark Hunter- "></br>
+                    <h4 class="titleInput">Penulis</h4>
+                    <input data-testid="bookFormAuthorInput" id="inputAuthor" class="input" type="text" placeholder="Penulis Buku. Contoh -Rizal AizuHiro-"></br>
+                    <h4 class="titleInput">Tahun</h4>
+                    <input data-testid="bookFormYearInput" id="inputTahun" class="input" type="text" placeholder="Tahun Buku. Contoh -2019- " onkeypress="return type_number(event)"></br>
+                    <div id="temp">
+                        <p class="titleInput" style="display: inline">Selesai dibaca</p>
+                        <input data-testid="bookFormIsCompleteCheckbox" id="checkbox" type="checkbox">
+                    </div>
+                    <button data-testid="bookFormSubmitButton" id="tombolBuatBuku" class="tombolTambah" type="submit" value="BUAT">BUAT</button>  
+                </form>
+            </div>
+            <div data-testid="incompleteBookList" class="container1">
+                <h3 class="text" align="center">Belum selesai dibaca</h3>
+                <div id="container2"></div>
+            </div>
+            <div data-testid="completeBookList" class="container1">
+                <h3 class="text" align="center">Selesai dibaca</h3>
+                <div id="container3"></div>
+            </div>
+            
+        </main>
+        <footer class="con_x">
+            Copyright © Rizal Abimanyu - 2024. All Right Reserved
+        </footer>
+    </body>
+    <script src="index.js"></script>
+</html>
